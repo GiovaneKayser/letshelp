@@ -1,0 +1,32 @@
+@layout('layouts/master')
+@set('title', 'Nova campanha')
+
+@section('body')
+<div class="card">
+            <div class="card-header px-5 card-events-header d-flex justify-content-center">
+              <h3>Eventos e campanhas</h3>
+            </div>
+
+            <div class="card-body card-events px-5">
+              @each(campaign in campaigns)
+              <div class="card shadow mb-2">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-8">
+                      <h5>{{campaign.name}}</h5>
+                    <hr>
+                      <p>{{campaign.description}}</p>
+                    </div>
+                    <div class="col-4">
+                      <h5  class="text-center">Recompensa</h5>
+                      <h6 class="text-center">Golds: {{campaign.reward}}</h6>
+                      <h6 class="text-center">Xp: {{campaign.xp}}</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @end
+            </div>
+          </div>
+        </div>
+@end

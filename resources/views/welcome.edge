@@ -1,0 +1,65 @@
+@layout('layouts/master')
+@set('title', 'Home page')
+
+@section('body')
+
+  <section class="">
+    <div class="mt-2">
+      <div class="row pr-0 mr-0">
+        <div class="col-6">
+          <div class="card card-events">
+            <div class="card-header card-events-header d-flex justify-content-center">
+              <h3>Eventos e campanhas</h3>
+            </div>
+            <div class="card-body">
+              @each(campaign in campaigns)
+              <div class="card shadow mb-2">
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-8">
+                      <h5>{{campaign.title}}</h5>
+                    <hr>
+                      <h6>{{campaign.ong}}</h6>
+                      <p>{{campaign.describe}}</p>
+                    </div>
+                    <div class="col-4 d-grid align-content-center">
+                      <h5  class="text-center">Recompensa</h5>
+                      <h6 class="text-center">CapiCoins: {{campaign.reward}}</h6>
+                      <h6 class="text-center">Xp: {{campaign.xp}}</h6>
+                      <button class="btn btn-dangersv2 mx-auto">Doar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              @end
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card card-profile">
+            <div class="d-flex row">
+              <h2 class="text-center">{{auth.user.name}}</h2>
+              <h4 class="text-center">Novato, Nivel 1</h4>
+              <img src="{{'/assets/icons/capi.svg'}}" class="mx-auto" height="150" width="150" alt=""/>
+            </div>
+            <div class="card-body d-flex row">
+              <h2 class="text-center">Troféus</h2>
+              <div class="d-flex justify-content-center" >
+                <img class="card-trophy" height="48" width="48" src="{{'/assets/icons/medal_award_icon_148770.svg'}}">
+                <img class="card-trophy" height="48" width="48" src="{{'/assets/icons/running_sport_icon_148767.svg'}}">
+                <img class="card-trophy" height="48" width="48" src="{{'/assets/icons/trophy_award_icon_148758.svg'}}">
+                <img class="card-trophy" height="48" width="48" src="{{'/assets/icons/winner_podium_icon_148754.svg'}}">
+              </div>
+              <hr class="my-4">
+              <h3 class="mx-auto text-center align-middle">Meu inventario</h3>
+              <div class="d-flex justify-content-center">
+              <p class="mx-2" ><img style="filter: invert(1);" src="{{'/assets/icons/Coin.svg'}}" class="mx-auto" height="32" width="32" alt=""/> : 100.00</p>
+              <p><img style="filter: invert(1);" src="{{'/assets/icons/Gem.svg'}}" class="mx-auto" height="32" width="32" alt=""/> : 100.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+@end

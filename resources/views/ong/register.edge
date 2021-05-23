@@ -1,0 +1,19 @@
+@layout('layouts/master')
+@set('title', 'Nova ONG')
+
+@section('body')
+  <section class="">
+    <form class="" action="/ong/add" method="POST">
+      <div class="mb-3">
+    {{ csrfField() }}
+
+        <label for="name" class="form-label">Name</label>
+        <input name="name" type="text" class="form-control" id="name" placeholder="Nome da ONG">
+        <label for="description" class="form-label">Descrição da ONG</label>
+        <input name="description" type="text" class="form-control" id="description" placeholder="Descrição da ONG">
+        <button type="submit" class="btn btn-primaryv2">Adicionar ONG</button>
+
+      </form>
+</div>
+  </section>
+@end
