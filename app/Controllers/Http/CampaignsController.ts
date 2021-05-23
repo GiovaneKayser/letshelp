@@ -12,7 +12,7 @@ export default class CampaignsController {
     const ong = Ong.find(params.id)
     return view.render('campaign/register', {ong})
   }
-  async add({ request,auth, response }) {
+  async add({ request, response }) {
     const ong = await Ong.find(request.input("ong_id"));
     const campaign = await Campaign.create({
       name: request.input('name'),

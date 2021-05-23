@@ -1,0 +1,18 @@
+@layout('layouts/master')
+@set('title', 'Lojinha')
+
+@section('body')
+<section>
+  <div>
+    @each(item in items)
+    <div class="card">
+      <div class="card-body">
+        <h2>{{item.name}}</h2>
+          <img src="{{'{{item.imageUrl}}'}}" width="40" height="40">
+        <h5>{{item.price}}</h5>
+      </div>
+    </div>
+    @end
+  </div>
+</section>
+@end

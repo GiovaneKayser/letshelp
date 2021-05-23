@@ -1,6 +1,4 @@
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
-import Hash from "@ioc:Adonis/Core/Hash";
 
 export default class UsersController {
   // async getRegister({ request, response }) {
@@ -30,8 +28,7 @@ export default class UsersController {
     const email = request.input("email");
     const password = request.input("password");
     try {
-      const res = await auth.use("web").attempt(email, password);
-      console.log(`res`, res)
+      await auth.use("web").attempt(email, password);
 
       response.redirect("/");
     } catch {

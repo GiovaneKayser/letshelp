@@ -1,0 +1,36 @@
+@layout('layouts/master')
+@set('title', 'ONGs')
+
+@section('body')
+  <section class="">
+
+    <div class="card">
+      <div class="card-header card-events-header d-flex justify-context-center">
+        <h3 class="mx-auto">ONGs</h3>
+      </div>
+      <a href="/ong/register" hidden>
+        Adicionar ONG
+      </a>
+  <div class="card-body card-events">
+    @each(ong in ongs)
+    <div class="card shadow mb-2">
+      <div class="card-body">
+        <div class="col-8">
+          <h5>{{ong.name}}</h5>
+          <p>{{ong.description}}</p>
+            <div>
+              <a href="/campaigns/register/{{ong.id}}"><button class="btn btn-successv2">Adicionar Campanha</button></a>
+            </div>
+        </div>
+        <div class="col-4">
+
+        </div>
+      </div>
+    </div>
+    @end
+  </div>
+</div>
+  </section>
+
+@end
+

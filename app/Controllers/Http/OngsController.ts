@@ -5,7 +5,6 @@ import Ong from '../../Models/Ong'
 export default class OngsController {
   async index({ view }) {
     const ongs = await Ong.all()
-    console.log(`ongs`, ongs)
     return view.render("ong/index", {ongs});
   }
   async register({ view }) {

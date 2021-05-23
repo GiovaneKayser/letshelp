@@ -1,8 +1,7 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasMany,HasMany, hasOne } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, hasMany,HasMany } from '@ioc:Adonis/Lucid/Orm'
 import User from "./User";
 import Campaign from './Campaign';
-import { Has } from '@ioc:Adonis/Lucid/Relations';
 export default class Ong extends BaseModel {
   @column({ isPrimary: true })
   public id: number

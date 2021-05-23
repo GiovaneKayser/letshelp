@@ -1,0 +1,20 @@
+@layout('layouts/master')
+@set('title', 'Login')
+
+@section('body')
+  <section class="col-sm-8 offset-sm-4 col-md-4 offset-md-8 mx-auto my-4">
+    <div class="card shadow">
+    <div class="card-body col d-flex flex-column justify-content-center">
+      <form class="mb-2 col d-flex flex-column justify-content-center" method="POST" action="/login">
+ {{ csrfField() }}
+          <label for="exampleFormControlInput1" class="form-label">Email</label>
+          <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="email">
+          <label for="exampleFormControlInput1" class="form-label">Senha</label>
+          <input name="password" type="password" class="form-control" id="exampleFormControlInput1" placeholder="senha">
+        <button type="submit" class="btn btn-successv2 my-2 mx-auto">Entrar</button>
+        </form>
+        <a href="/register" class=" mx-auto"><button class="btn btn-primaryv2">Registrar</button></a>
+      </div>
+</div>
+  </section>
+@end

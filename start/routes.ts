@@ -19,27 +19,13 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import Campaign from 'App/Models/Campaign';
 
 Route.get('/', async ({ auth,view }) => {
   await auth.use("web").authenticate();
 
-   let campaigns =
-      [
-        {
-          title: "Teste 1",
-          ong: "Ong teste",
-          describe: "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia.",
-          reward: 100,
-          xp:10
-      },
-      {
-          title: "Teste 2",
-          ong: "Ong teste 2",
-          describe: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
-          reward: 300,
-          xp: 30
-        }
-     ]
+  const campaigns = await Campaign.all()
+
   let user = {
     name: 'Giovane Kayser',
   }
